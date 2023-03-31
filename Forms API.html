@@ -11,26 +11,31 @@
     <button onclick="myFunction()">OK</button>
     <p id="demo"></p>
 </body>
-<script>
-    function myFunction(){
-       const inputObj = document.getElementById("id1"); 
+    <script>
+        function myFunction(){
+        const inputObj = document.getElementById("id1"); 
 
-       if(inputObj.validity.rangeOverflow){
-            inputObj.setCustomValidity("You have may a range overflow error!");
-       }
-       else if(inputObj.validity.rangeUnderflow){
-            inputObj.setCustomValidity("range underflow");
-       }
-       else if(inputObj.validity.valueMissing){
-            inputObj.setCustomValidity("value missing");
-       }
+        //chage the build in message
+        if(inputObj.validity.rangeOverflow){
+                inputObj.setCustomValidity("You have may a range overflow error!");
+        }
+        else if(inputObj.validity.rangeUnderflow){
+                inputObj.setCustomValidity("range underflow");
+        }
+        else if(inputObj.validity.valueMissing){
+                inputObj.setCustomValidity("value missing");
+        }
+        else{
+            inputObj.setCustomValidity("Input ok");
+        }
 
-       if(!inputObj.checkValidity()){
-            document.getElementById("demo").innerHTML = inputObj.
-            validationMessage;
-       }else{
-            document.getElementById("demo").innerHTML = "input OK";
-       }
+        if(!inputObj.checkValidity()){
+                document.getElementById("demo").innerHTML = inputObj.
+                validationMessage;
+        }
+        else{
+                document.getElementById("demo").innerHTML = "input OK";
+        }
     }
-</script>
+    </script>
 </html>
